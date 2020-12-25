@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тестовое задание</title>
+    <link rel="stylesheet" href="inc/style.css">
+</head>
+<body>
+    <form class="form_body" method="POST" action="addCountry.php" autocomplete="off">
+        <fieldset>
+            <legend class="form-title">Добавление новой страны в таблицу</legend>
+            <div class="form-item">
+                <input type="text" name="title" placeholder="Название страны" minlength="3" maxlength="60">
+            </div>
+            <div class="form-item">
+                <input type="text" name="capital" placeholder="Столица страны" minlength="3" maxlength="60">
+            </div>
+            <div class="form-item">
+                <input type="text" name="language" placeholder="Государственный язык" minlength="3" maxlength="60">
+            </div>
+            <div class="form-item">
+                <input type="number" name="population"  placeholder="Численность населения" max="9999999999">
+            </div>
+            <div class="form-item">
+                <div class="title-checkbox">Континент</div>
+                <div class="flex-checkbox">
+                    <div>
+                        <label class="flex-label">
+                            <input type="checkbox" name="continent[]" value="Европа">
+                            <div class="checkbox"></div> Европа
+                        </label>
+                        <label class="flex-label">
+                            <input type="checkbox" name="continent[]" value="Азия">
+                            <div class="checkbox"></div> Азия
+                        </label>
+                    </div>
+                    <div>
+                        <label class="flex-label">
+                            <input type="checkbox" name="continent[]" value="Африка">
+                            <div class="checkbox"></div> Африка
+                        </label>
+                        <label class="flex-label">
+                            <input type="checkbox" name="continent[]" value="Северная Америка">
+                            <div class="checkbox"></div> Северная Америка
+                        </label>
+                    </div>
+                    <div>
+                        <label class="flex-label">
+                            <input type="checkbox" name="continent[]" value="Южная Америка">
+                            <div class="checkbox"></div> Южная Америка
+                        </label>
+                        <label class="flex-label">
+                            <input type="checkbox" name="continent[]" value="Австралия">
+                            <div class="checkbox"></div> Австралия
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+        <div class="form-item">
+            <input type="submit" value="добавить данные">
+        </div>
+    </form>
+    <div class="btn_table">
+        <button>вывести/скрыть данные на экране</button>
+    </div>
+
+    <!-- В этот блок будут погружаться данные из БД -->
+    <div id="countries"></div>
+    
+    <script src="inc/validate_form.js"></script>
+    <script src="inc/view_country.js"></script>
+</body>
+</html>
